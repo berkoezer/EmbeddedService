@@ -1,24 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Chat Integration Example</title>
+</head>
+<body>
+    
+    <!-- Main content container -->
+    <div id="main-content">
+        <h1>Welcome to Our Portal</h1>
+    </div>
 
-  <script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en'; // For example, enter 'en' or 'en-US'
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'de'; // For example, enter 'en' or 'en-US'
+    
+                embeddedservice_bootstrap.init(
+                    '00D9K000002L1Sz',
+                    'Pension_Cloud',
+                    'https://degura--berko.sandbox.my.site.com/ESWPensionCloud1699881719835',
+                    {
+                        scrt2URL: 'https://degura--berko.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://degura--berko.sandbox.my.site.com/ESWPensionCloud1699881719835/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    
+        
 
-			embeddedservice_bootstrap.init(
-				'00D9K000002L1Sz',
-				'Pension_Cloud',
-				'https://degura--berko.sandbox.my.site.com/ESWPensionCloud1699881719835',
-				{
-					scrt2URL: 'https://degura--berko.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://degura--berko.sandbox.my.site.com/ESWPensionCloud1699881719835/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-  
+    <!-- Any additional scripts can be added below -->
+</body>
 </html>
